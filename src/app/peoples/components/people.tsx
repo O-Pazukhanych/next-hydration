@@ -2,6 +2,7 @@
 
 import {PeopleComponentProps} from "@/type/peoples";
 import {FC, useState} from "react";
+import {getCookieByName} from "@/utils/cookie";
 
 export const People: FC<PeopleComponentProps> = (props) => {
     const {
@@ -15,7 +16,8 @@ export const People: FC<PeopleComponentProps> = (props) => {
             <span>{properties.key}: </span>
             <input
                 style={{
-                    backgroundColor: '#000'
+                    background: getCookieByName('theme') === 'light' ? '#fff' : '#000',
+                    color: getCookieByName('theme') === 'light' ? '#000' : '#fff'
                 }}
                 type={'text'}
                 value={value}

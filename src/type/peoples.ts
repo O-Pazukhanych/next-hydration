@@ -1,10 +1,13 @@
 export interface PeoplesResponse {
-    message: string
-    total_records: number
-    total_pages: number
-    previous: any
-    next: string
-    results: PeopleByArray[]
+    status: number;
+    data: {
+        message: string
+        total_records: number
+        total_pages: number
+        previous: any
+        next: string
+        results: PeopleByArray[]
+    }
 }
 
 export interface PeopleResponse {
